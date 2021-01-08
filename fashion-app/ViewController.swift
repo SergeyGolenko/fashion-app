@@ -40,6 +40,10 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     
     private var imageViews = [UIImageView]()
     
+    var collectionViewWidth: CGFloat {
+        return collectionView.frame.size.width
+    }
+    
 
     
     //MARK: - lifecycle
@@ -77,6 +81,23 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     }
     
     
+    //This is magic functions :)
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let x = scrollView.contentOffset.x
+        let index = getCurrentIndex()
+        let fadeInAlpha = (x - collectionViewWidth * CGFloat(index)) / collectionViewWidth
+        let fadeOutAlpha = CGFloat(1 - fadeInAlpha)
+        let canShow = (index < items.count - 1)
+        guard canShow else {
+            return
+        }
+        imageViews[index].alpha = fadeOutAlpha
+        imageViews[index + 1].alpha = fadeInAlpha
+    }
+    
+    
+    
+    
     //MARK: - IBOutlets ans IBAction
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var containerView: UIView!
@@ -100,6 +121,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         items.forEach { item in
             let imageView = UIImageView(image: item.image)
             imageView.contentMode = .scaleAspectFill
+            imageView.alpha = 0.0
             imageView.translatesAutoresizingMaskIntoConstraints = false
             imageView.clipsToBounds = true
             containerView.addSubview(imageView)
@@ -111,6 +133,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
             ])
             imageViews.append(imageView)
         }
+        imageViews.first?.alpha = 1.0
         containerView.bringSubviewToFront(collectionView)
     }
     
