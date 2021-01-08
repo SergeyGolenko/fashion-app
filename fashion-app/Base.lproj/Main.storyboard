@@ -29,6 +29,9 @@
                                                 <state key="normal" title="NEXT">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="nextButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AYk-mx-fCa"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -95,6 +98,12 @@
                             <constraint firstAttribute="bottom" secondItem="x0L-wE-cRZ" secondAttribute="bottom" id="wP5-hd-b9A"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="cTR-Dp-odK" id="30X-vT-BQS"/>
+                        <outlet property="containerView" destination="x0L-wE-cRZ" id="Rie-BA-Pty"/>
+                        <outlet property="nextButton" destination="Qos-1J-rQF" id="Bol-Jo-e1a"/>
+                        <outlet property="pageControl" destination="8bC-Xf-vdC" id="ann-nj-uRP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
