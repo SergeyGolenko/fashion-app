@@ -38,30 +38,17 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
               image: UIImage(named: "imFashion5"))
     ]
     
+    private var imageViews = [UIImageView]()
     
-    //MARK: - IBOutlets ans IBAction
-    @IBOutlet weak var nextButton: UIButton!
-    @IBOutlet weak var containerView: UIView!
-    @IBOutlet var pageControl: UIView!
-    @IBOutlet weak var collectionView: UICollectionView!
-    @IBAction func nextButtonAction(_ sender: Any) {
-    }
-    //MARK: - functions
+
     
-    private func setupCollectionView(){
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        collectionView.collectionViewLayout = layout
-        collectionView.isPagingEnabled = true
-    }
     //MARK: - lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
+        setupPageControl()
+        setupImageViews()
     }
-
     
     //MARK: - DataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -83,18 +70,81 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 1
     }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let index = getCurrentIndex()
+        showItem(at: index)
+    }
+    
+    
+    //MARK: - IBOutlets ans IBAction
+    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var containerView: UIView!
+    
+    
+    @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    @IBAction func nextButtonAction(_ sender: Any) {
+        let nextRow = getCurrentIndex() + 1
+        let nextIndexPath = IndexPath(row: nextRow, section: 0)
+        collectionView.scrollToItem(at: nextIndexPath, at: .left, animated: true)
+        showItem(at: nextRow)
+       
+    }
+    
+    
+    //MARK: - functions
+    
+    private func setupImageViews(){
+        items.forEach { item in
+            let imageView = UIImageView(image: item.image)
+            imageView.contentMode = .scaleAspectFill
+            imageView.translatesAutoresizingMaskIntoConstraints = false
+            imageView.clipsToBounds = true
+            containerView.addSubview(imageView)
+            NSLayoutConstraint.activate([
+                imageView.heightAnchor.constraint(equalTo: containerView.heightAnchor, multiplier: 0.8),
+                imageView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
+                imageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+                imageView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
+            ])
+            imageViews.append(imageView)
+        }
+        containerView.bringSubviewToFront(collectionView)
+    }
+    
+    private func setupPageControl(){
+        self.pageControl.numberOfPages = items.count
+    }
+    
+    private func setupCollectionView(){
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        collectionView.collectionViewLayout = layout
+        collectionView.isPagingEnabled = true
+    
+    }
+    
+    private func getCurrentIndex() -> Int{
+        return Int(collectionView.contentOffset.x / collectionView.frame.width)
+    }
+    
+    private func showItem(at index: Int){
+        pageControl.currentPage = index
+    }
 }
 
 
 class FashionCustomCell : UICollectionViewCell {
-    
     @IBOutlet weak var titleLable: UILabel!
-    
     @IBOutlet weak var secondTitleLable: UILabel!
-    
     func configure(with item: OnboardingItem){
         titleLable.text = item.title
         secondTitleLable.text = item.detail
+        
     }
 }
 
