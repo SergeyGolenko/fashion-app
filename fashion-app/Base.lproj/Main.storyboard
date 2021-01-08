@@ -56,21 +56,74 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="791.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="RAd-s0-hHd">
-                                            <size key="itemSize" width="297" height="181"/>
+                                            <size key="itemSize" width="366" height="757"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="Itd-17-36H">
-                                                <rect key="frame" x="58.5" y="0.0" width="297" height="181"/>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="Itd-17-36H" customClass="FashionCustomCell" customModule="fashion_app" customModuleProvider="target">
+                                                <rect key="frame" x="24" y="0.0" width="366" height="757"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="PKh-5j-Nms">
-                                                    <rect key="frame" x="0.0" y="0.0" width="297" height="181"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="366" height="757"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TFu-bq-1nB">
+                                                            <rect key="frame" x="0.0" y="0.0" width="366" height="151.5"/>
+                                                            <subviews>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="okQ-rl-urc" userLabel="LabelsContainerView">
+                                                                    <rect key="frame" x="0.0" y="51.5" width="366" height="48"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coco chanel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cfn-T3-NH1">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="366" height="24"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Industry Icon Stella Tennant Passes Away at 50" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zSn-V2-CxL">
+                                                                            <rect key="frame" x="0.0" y="32" width="366" height="16"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                    <constraints>
+                                                                        <constraint firstItem="zSn-V2-CxL" firstAttribute="top" secondItem="Cfn-T3-NH1" secondAttribute="bottom" constant="8" id="1pq-Ci-1uX"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="zSn-V2-CxL" secondAttribute="trailing" id="IXv-e6-kfX"/>
+                                                                        <constraint firstItem="zSn-V2-CxL" firstAttribute="leading" secondItem="okQ-rl-urc" secondAttribute="leading" id="LD7-IA-q6w"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="zSn-V2-CxL" secondAttribute="bottom" id="ZSd-Xq-siL"/>
+                                                                        <constraint firstItem="Cfn-T3-NH1" firstAttribute="top" secondItem="okQ-rl-urc" secondAttribute="top" id="dCj-gb-Nun"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="Cfn-T3-NH1" secondAttribute="trailing" id="hk8-9C-BRy"/>
+                                                                        <constraint firstItem="Cfn-T3-NH1" firstAttribute="leading" secondItem="okQ-rl-urc" secondAttribute="leading" id="icI-yO-1r4"/>
+                                                                    </constraints>
+                                                                </view>
+                                                            </subviews>
+                                                            <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                                            <constraints>
+                                                                <constraint firstItem="Cfn-T3-NH1" firstAttribute="height" secondItem="TFu-bq-1nB" secondAttribute="height" multiplier="0.158416" id="7mV-Be-z3p"/>
+                                                                <constraint firstItem="okQ-rl-urc" firstAttribute="top" relation="greaterThanOrEqual" secondItem="TFu-bq-1nB" secondAttribute="top" id="Aag-CS-RXp"/>
+                                                                <constraint firstItem="okQ-rl-urc" firstAttribute="leading" secondItem="TFu-bq-1nB" secondAttribute="leading" id="CxT-Ud-SYt"/>
+                                                                <constraint firstAttribute="trailing" secondItem="okQ-rl-urc" secondAttribute="trailing" id="UjW-Rq-zFI"/>
+                                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="okQ-rl-urc" secondAttribute="bottom" id="bCe-Ya-8sh"/>
+                                                                <constraint firstItem="okQ-rl-urc" firstAttribute="centerY" secondItem="TFu-bq-1nB" secondAttribute="centerY" id="kgo-NL-OnT"/>
+                                                            </constraints>
+                                                        </view>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="TFu-bq-1nB" firstAttribute="top" secondItem="PKh-5j-Nms" secondAttribute="top" id="4a8-Q8-5Sf"/>
+                                                        <constraint firstItem="TFu-bq-1nB" firstAttribute="height" secondItem="PKh-5j-Nms" secondAttribute="height" multiplier="0.2" id="8R4-eT-F7R"/>
+                                                        <constraint firstAttribute="trailing" secondItem="TFu-bq-1nB" secondAttribute="trailing" id="oPT-YC-93K"/>
+                                                        <constraint firstItem="TFu-bq-1nB" firstAttribute="leading" secondItem="PKh-5j-Nms" secondAttribute="leading" id="uJY-QA-jBk"/>
+                                                    </constraints>
                                                 </collectionViewCellContentView>
-                                                <size key="customSize" width="297" height="181"/>
+                                                <size key="customSize" width="366" height="757"/>
+                                                <connections>
+                                                    <outlet property="secondTitleLable" destination="zSn-V2-CxL" id="2jc-od-IhH"/>
+                                                    <outlet property="titleLable" destination="Cfn-T3-NH1" id="1CL-T2-5Aq"/>
+                                                </connections>
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
@@ -111,11 +164,17 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

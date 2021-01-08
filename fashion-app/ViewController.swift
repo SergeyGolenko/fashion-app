@@ -52,3 +52,11 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     }
 }
 
+
+class FashionCustomCell : UICollectionViewCell {
+    
+    @IBOutlet weak var titleLable: UILabel!
+    
+    @IBOutlet weak var secondTitleLable: UILabel!
+}
+
