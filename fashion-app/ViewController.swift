@@ -61,6 +61,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! FashionCustomCell
+        cell.delegate = self
         let shouldShow = indexPath.item == items.count - 1
         cell.showExploreButton(shouldShow: shouldShow)
         let item = items[indexPath.item]
@@ -158,17 +159,44 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     
     private func showItem(at index: Int){
         pageControl.currentPage = index
+        let shouldHide = index == items.count - 1
+        nextButton.isHidden = shouldHide
     }
+}
+
+extension ViewController: QuoteCollectionViewDelegate{
+    func didTapExploreButton() {
+        let mainAppViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "MainAppController")
+        
+        if let sceneDelegate = view.window?.windowScene?.delegate as? SceneDelegate, let window = sceneDelegate.window {
+            window.rootViewController = mainAppViewController
+            UIView.transition(with: window, duration: 3, options: .transitionCrossDissolve, animations: nil, completion: nil)
+        }
+        
+    }
+    
+    
+}
+
+
+
+
+
+
+protocol QuoteCollectionViewDelegate:class{
+    func didTapExploreButton()
 }
 
 
 class FashionCustomCell : UICollectionViewCell {
     
+    weak var delegate : QuoteCollectionViewDelegate?
+    
     
     @IBOutlet weak var exploreButton: UIButton!
     
     @IBAction func exploreButtonTapped(_ sender: Any) {
-      
+        delegate?.didTapExploreButton()
     }
     
     @IBOutlet weak var titleLable: UILabel!
