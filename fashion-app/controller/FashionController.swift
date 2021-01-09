@@ -152,11 +152,3 @@ extension FashionController: QuoteCollectionViewDelegate{
         }
     }
 }
-
-protocol QuoteCollectionViewDelegate:class{
-    func didTapExploreButton()
-}
-
-
-
-

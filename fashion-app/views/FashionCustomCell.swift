@@ -8,6 +8,11 @@
 import UIKit
 
 
+protocol QuoteCollectionViewDelegate:class{
+    func didTapExploreButton()
+}
+
+
 class FashionCustomCell : UICollectionViewCell {
     weak var delegate : QuoteCollectionViewDelegate?
     @IBOutlet weak var exploreButton: UIButton!
