@@ -61,6 +61,8 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! FashionCustomCell
+        let shouldShow = indexPath.item == items.count - 1
+        cell.showExploreButton(shouldShow: shouldShow)
         let item = items[indexPath.item]
         
         cell.configure(with: item)
@@ -99,10 +101,9 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     
     
     //MARK: - IBOutlets ans IBAction
+
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var containerView: UIView!
-    
-    
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -162,12 +163,23 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
 
 
 class FashionCustomCell : UICollectionViewCell {
+    
+    
+    @IBOutlet weak var exploreButton: UIButton!
+    
+    @IBAction func exploreButtonTapped(_ sender: Any) {
+      
+    }
+    
     @IBOutlet weak var titleLable: UILabel!
     @IBOutlet weak var secondTitleLable: UILabel!
     func configure(with item: OnboardingItem){
         titleLable.text = item.title
         secondTitleLable.text = item.detail
-        
+    }
+    
+    func showExploreButton(shouldShow: Bool){
+        exploreButton.isHidden = !shouldShow
     }
 }
 

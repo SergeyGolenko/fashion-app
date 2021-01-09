@@ -113,11 +113,28 @@
                                                                 <constraint firstItem="okQ-rl-urc" firstAttribute="centerY" secondItem="TFu-bq-1nB" secondAttribute="centerY" id="kgo-NL-OnT"/>
                                                             </constraints>
                                                         </view>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHO-rc-v5o">
+                                                            <rect key="frame" x="36" y="657" width="294" height="50"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="50" id="2J1-W4-6VM"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <state key="normal" title="EXPLORE">
+                                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="exploreButtonTapped:" destination="Itd-17-36H" eventType="touchUpInside" id="47E-Bs-Lpf"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="TFu-bq-1nB" firstAttribute="top" secondItem="PKh-5j-Nms" secondAttribute="top" id="4a8-Q8-5Sf"/>
                                                         <constraint firstItem="TFu-bq-1nB" firstAttribute="height" secondItem="PKh-5j-Nms" secondAttribute="height" multiplier="0.2" id="8R4-eT-F7R"/>
+                                                        <constraint firstItem="kHO-rc-v5o" firstAttribute="leading" secondItem="PKh-5j-Nms" secondAttribute="leading" constant="36" id="HFB-Rb-pVe"/>
+                                                        <constraint firstAttribute="bottom" secondItem="kHO-rc-v5o" secondAttribute="bottom" constant="50" id="Oos-d6-ccz"/>
+                                                        <constraint firstAttribute="trailing" secondItem="kHO-rc-v5o" secondAttribute="trailing" constant="36" id="gaH-Vi-Ja9"/>
                                                         <constraint firstAttribute="trailing" secondItem="TFu-bq-1nB" secondAttribute="trailing" id="oPT-YC-93K"/>
                                                         <constraint firstItem="TFu-bq-1nB" firstAttribute="leading" secondItem="PKh-5j-Nms" secondAttribute="leading" id="uJY-QA-jBk"/>
                                                     </constraints>
@@ -125,6 +142,7 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <size key="customSize" width="366" height="757"/>
                                                 <connections>
+                                                    <outlet property="exploreButton" destination="kHO-rc-v5o" id="v4l-Y1-Dqa"/>
                                                     <outlet property="secondTitleLable" destination="zSn-V2-CxL" id="2jc-od-IhH"/>
                                                     <outlet property="titleLable" destination="Cfn-T3-NH1" id="1CL-T2-5Aq"/>
                                                 </connections>
