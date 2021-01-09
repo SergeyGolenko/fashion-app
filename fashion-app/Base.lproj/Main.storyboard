@@ -118,7 +118,7 @@
                                                                 <constraint firstAttribute="height" constant="50" id="2J1-W4-6VM"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                            <state key="normal" title="EXPLORE">
+                                                            <state key="normal" title=" click this">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
                                                             <connections>
@@ -180,7 +180,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-26.086956521739133" y="137.94642857142856"/>
+            <point key="canvasLocation" x="-238" y="-22"/>
         </scene>
         <!--Main App Controller-->
         <scene sceneID="EeI-fV-8V4">
@@ -190,29 +190,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="MainAppController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ens-32-Ltb">
-                                <rect key="frame" x="97" y="382" width="220" height="99"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fashionTheEnd" translatesAutoresizingMaskIntoConstraints="NO" id="Brn-or-RnV">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h5t-5c-oPU">
+                                <rect key="frame" x="57" y="373" width="300" height="150"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Touch screen and you come back " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ens-32-Ltb">
+                                        <rect key="frame" x="20" y="26" width="260" height="99"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="ens-32-Ltb" firstAttribute="leading" secondItem="h5t-5c-oPU" secondAttribute="leading" constant="20" id="JUG-gE-zkF"/>
+                                    <constraint firstAttribute="height" constant="150" id="U03-nn-kR1"/>
+                                    <constraint firstItem="ens-32-Ltb" firstAttribute="top" secondItem="h5t-5c-oPU" secondAttribute="top" constant="26" id="bwL-AB-bxw"/>
+                                    <constraint firstAttribute="bottom" secondItem="ens-32-Ltb" secondAttribute="bottom" constant="25" id="h4e-um-KtO"/>
+                                    <constraint firstAttribute="trailing" secondItem="ens-32-Ltb" secondAttribute="trailing" constant="20" id="md8-fH-37Y"/>
+                                    <constraint firstAttribute="width" constant="300" id="rXh-T2-F5t"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bmp-2X-aAp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ens-32-Ltb" firstAttribute="centerX" secondItem="Bmp-2X-aAp" secondAttribute="centerX" id="AP5-fO-2eO"/>
-                            <constraint firstItem="ens-32-Ltb" firstAttribute="centerY" secondItem="Bmp-2X-aAp" secondAttribute="centerY" id="DbX-pT-uyp"/>
-                            <constraint firstItem="ens-32-Ltb" firstAttribute="width" secondItem="HbK-vY-boG" secondAttribute="width" multiplier="0.531401" id="ICS-Ht-sB6"/>
-                            <constraint firstItem="ens-32-Ltb" firstAttribute="height" secondItem="HbK-vY-boG" secondAttribute="height" multiplier="0.110491" id="lRN-Hh-hco"/>
+                            <constraint firstItem="h5t-5c-oPU" firstAttribute="centerY" secondItem="HbK-vY-boG" secondAttribute="centerY" id="5wa-6x-A7E"/>
+                            <constraint firstItem="Brn-or-RnV" firstAttribute="trailing" secondItem="Bmp-2X-aAp" secondAttribute="trailing" id="EJc-W2-wvK"/>
+                            <constraint firstItem="h5t-5c-oPU" firstAttribute="centerX" secondItem="HbK-vY-boG" secondAttribute="centerX" id="UMe-j5-UQS"/>
+                            <constraint firstAttribute="bottom" secondItem="Brn-or-RnV" secondAttribute="bottom" id="Vlk-fV-Fvr"/>
+                            <constraint firstItem="Brn-or-RnV" firstAttribute="top" secondItem="HbK-vY-boG" secondAttribute="top" id="e2Q-P5-ddZ"/>
+                            <constraint firstItem="Brn-or-RnV" firstAttribute="leading" secondItem="Bmp-2X-aAp" secondAttribute="leading" id="zq5-dC-Vct"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bBA-Gi-bDy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1173.913043478261" y="133.92857142857142"/>
+            <point key="canvasLocation" x="1113" y="-175"/>
         </scene>
     </scenes>
     <resources>
+        <image name="fashionTheEnd" width="800" height="1200"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
