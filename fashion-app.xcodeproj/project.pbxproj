@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		2CA7D61425A876A4002BC90A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7D61325A876A4002BC90A /* AppDelegate.swift */; };
 		2CA7D61625A876A4002BC90A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7D61525A876A4002BC90A /* SceneDelegate.swift */; };
-		2CA7D61825A876A4002BC90A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7D61725A876A4002BC90A /* ViewController.swift */; };
+		2CA7D61825A876A4002BC90A /* FashionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7D61725A876A4002BC90A /* FashionController.swift */; };
 		2CA7D61B25A876A4002BC90A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA7D61925A876A4002BC90A /* Main.storyboard */; };
 		2CA7D61D25A876A6002BC90A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CA7D61C25A876A6002BC90A /* Assets.xcassets */; };
 		2CA7D62025A876A6002BC90A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA7D61E25A876A6002BC90A /* LaunchScreen.storyboard */; };
+		2CA7D62C25A9D36F002BC90A /* FashionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7D62B25A9D36F002BC90A /* FashionModel.swift */; };
+		2CA7D63125A9DEA5002BC90A /* FashionCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7D63025A9DEA5002BC90A /* FashionCustomCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2CA7D61025A876A4002BC90A /* fashion-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fashion-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CA7D61325A876A4002BC90A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CA7D61525A876A4002BC90A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2CA7D61725A876A4002BC90A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2CA7D61725A876A4002BC90A /* FashionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FashionController.swift; sourceTree = "<group>"; };
 		2CA7D61A25A876A4002BC90A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2CA7D61C25A876A6002BC90A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CA7D61F25A876A6002BC90A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CA7D62125A876A6002BC90A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2CA7D62B25A9D36F002BC90A /* FashionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FashionModel.swift; sourceTree = "<group>"; };
+		2CA7D63025A9DEA5002BC90A /* FashionCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FashionCustomCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,41 @@
 		2CA7D61225A876A4002BC90A /* fashion-app */ = {
 			isa = PBXGroup;
 			children = (
+				2CA7D62F25A9DE68002BC90A /* views */,
+				2CA7D62E25A9DE50002BC90A /* controller */,
+				2CA7D62A25A9D336002BC90A /* model */,
 				2CA7D61325A876A4002BC90A /* AppDelegate.swift */,
 				2CA7D61525A876A4002BC90A /* SceneDelegate.swift */,
-				2CA7D61725A876A4002BC90A /* ViewController.swift */,
 				2CA7D61925A876A4002BC90A /* Main.storyboard */,
 				2CA7D61C25A876A6002BC90A /* Assets.xcassets */,
 				2CA7D61E25A876A6002BC90A /* LaunchScreen.storyboard */,
 				2CA7D62125A876A6002BC90A /* Info.plist */,
 			);
 			path = "fashion-app";
+			sourceTree = "<group>";
+		};
+		2CA7D62A25A9D336002BC90A /* model */ = {
+			isa = PBXGroup;
+			children = (
+				2CA7D62B25A9D36F002BC90A /* FashionModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		2CA7D62E25A9DE50002BC90A /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				2CA7D61725A876A4002BC90A /* FashionController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		2CA7D62F25A9DE68002BC90A /* views */ = {
+			isa = PBXGroup;
+			children = (
+				2CA7D63025A9DEA5002BC90A /* FashionCustomCell.swift */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +167,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CA7D61825A876A4002BC90A /* ViewController.swift in Sources */,
+				2CA7D61825A876A4002BC90A /* FashionController.swift in Sources */,
+				2CA7D63125A9DEA5002BC90A /* FashionCustomCell.swift in Sources */,
 				2CA7D61425A876A4002BC90A /* AppDelegate.swift in Sources */,
+				2CA7D62C25A9D36F002BC90A /* FashionModel.swift in Sources */,
 				2CA7D61625A876A4002BC90A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

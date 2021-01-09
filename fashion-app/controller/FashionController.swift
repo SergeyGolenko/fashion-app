@@ -7,36 +7,11 @@
 
 import UIKit
 
-struct  OnboardingItem {
-    let title : String
-    let detail : String
-    let image : UIImage?
-}
-
-
-
-
-
-class ViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+class FashionController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     
     //MARK: - properties
-    private let items: [OnboardingItem] = [
-        .init(title: "Diana Vreeland",
-              detail: "Fashion is part of the daily air and it changes all the time, with all the events. You can even see the approaching of a revolution in clothes. You can see and feel everything in clothes.",
-              image: UIImage(named: "imFashion1")),
-        .init(title: "Gianni Versace",
-              detail: "Don't be into trends. Don't make fashion own you, but you decide what you are, what you want to express by the way you dress and the way to live.",
-              image: UIImage(named: "imFashion2")),
-        .init(title: "Karl Lagerfeld",
-              detail: "One is never over-dressed or under-dressed with a Little Black Dress.",
-              image: UIImage(named: "imFashion3")),
-        .init(title: "Miuccia Prada",
-              detail: "What you wear is how you present yourself to the world, especially today, when human contacts are so quick. Fashion is instant language.",
-              image: UIImage(named: "imFashion4")),
-        .init(title: "Bette Midler",
-              detail: "I firmly believe that with the right footwear one can rule the world.",
-              image: UIImage(named: "imFashion5"))
-    ]
+    private var items: [OnboardingItem] = OnboardingItem.items
+    
     
     private var imageViews = [UIImageView]()
     
@@ -141,6 +116,8 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     
     private func setupPageControl(){
         self.pageControl.numberOfPages = items.count
+        pageControl.pageIndicatorTintColor = .black
+       
     }
     
     private func setupCollectionView(){
@@ -150,6 +127,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         layout.scrollDirection = .horizontal
         collectionView.collectionViewLayout = layout
         collectionView.isPagingEnabled = true
+        collectionView.showsHorizontalScrollIndicator = false
     
     }
     
@@ -164,7 +142,7 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
     }
 }
 
-extension ViewController: QuoteCollectionViewDelegate{
+extension FashionController: QuoteCollectionViewDelegate{
     func didTapExploreButton() {
         let mainAppViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "MainAppController")
         
@@ -172,42 +150,13 @@ extension ViewController: QuoteCollectionViewDelegate{
             window.rootViewController = mainAppViewController
             UIView.transition(with: window, duration: 3, options: .transitionCrossDissolve, animations: nil, completion: nil)
         }
-        
     }
-    
-    
 }
-
-
-
-
-
 
 protocol QuoteCollectionViewDelegate:class{
     func didTapExploreButton()
 }
 
 
-class FashionCustomCell : UICollectionViewCell {
-    
-    weak var delegate : QuoteCollectionViewDelegate?
-    
-    
-    @IBOutlet weak var exploreButton: UIButton!
-    
-    @IBAction func exploreButtonTapped(_ sender: Any) {
-        delegate?.didTapExploreButton()
-    }
-    
-    @IBOutlet weak var titleLable: UILabel!
-    @IBOutlet weak var secondTitleLable: UILabel!
-    func configure(with item: OnboardingItem){
-        titleLable.text = item.title
-        secondTitleLable.text = item.detail
-    }
-    
-    func showExploreButton(shouldShow: Bool){
-        exploreButton.isHidden = !shouldShow
-    }
-}
+
 
