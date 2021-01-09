@@ -73,12 +73,7 @@ class FashionController: UIViewController,UICollectionViewDelegate,UICollectionV
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    @IBAction func nextButtonAction(_ sender: Any) {
-        let nextRow = getCurrentIndex() + 1
-        let nextIndexPath = IndexPath(row: nextRow, section: 0)
-        collectionView.scrollToItem(at: nextIndexPath, at: .left, animated: true)
-        showItem(at: nextRow)
-    }
+  
     
     //MARK: - functions
     private func setupImageViews(){
