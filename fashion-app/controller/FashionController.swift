@@ -11,15 +11,10 @@ class FashionController: UIViewController,UICollectionViewDelegate,UICollectionV
     
     //MARK: - properties
     private var items: [OnboardingItem] = OnboardingItem.items
-    
-    
     private var imageViews = [UIImageView]()
-    
     var collectionViewWidth: CGFloat {
         return collectionView.frame.size.width
     }
-    
-
     
     //MARK: - lifecycle
     override func viewDidLoad() {
@@ -58,7 +53,6 @@ class FashionController: UIViewController,UICollectionViewDelegate,UICollectionV
         showItem(at: index)
     }
     
-    
     //This is magic functions :)
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let x = scrollView.contentOffset.x
@@ -73,11 +67,7 @@ class FashionController: UIViewController,UICollectionViewDelegate,UICollectionV
         imageViews[index + 1].alpha = fadeInAlpha
     }
     
-    
-    
-    
     //MARK: - IBOutlets ans IBAction
-
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var pageControl: UIPageControl!
@@ -88,12 +78,9 @@ class FashionController: UIViewController,UICollectionViewDelegate,UICollectionV
         let nextIndexPath = IndexPath(row: nextRow, section: 0)
         collectionView.scrollToItem(at: nextIndexPath, at: .left, animated: true)
         showItem(at: nextRow)
-       
     }
     
-    
     //MARK: - functions
-    
     private func setupImageViews(){
         items.forEach { item in
             let imageView = UIImageView(image: item.image)
@@ -128,7 +115,6 @@ class FashionController: UIViewController,UICollectionViewDelegate,UICollectionV
         collectionView.collectionViewLayout = layout
         collectionView.isPagingEnabled = true
         collectionView.showsHorizontalScrollIndicator = false
-    
     }
     
     private func getCurrentIndex() -> Int{
@@ -145,10 +131,9 @@ class FashionController: UIViewController,UICollectionViewDelegate,UICollectionV
 extension FashionController: QuoteCollectionViewDelegate{
     func didTapExploreButton() {
         let mainAppViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "MainAppController")
-        
         if let sceneDelegate = view.window?.windowScene?.delegate as? SceneDelegate, let window = sceneDelegate.window {
             window.rootViewController = mainAppViewController
-            UIView.transition(with: window, duration: 3, options: .transitionCrossDissolve, animations: nil, completion: nil)
+            UIView.transition(with: window, duration: 2, options: .transitionCrossDissolve, animations: nil, completion: nil)
         }
     }
 }
