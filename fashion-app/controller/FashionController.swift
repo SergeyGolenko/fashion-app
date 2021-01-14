@@ -10,6 +10,7 @@ import UIKit
 class FashionController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     
     //MARK: - properties
+    private var  navigationManager = NavigationManager()
     private var items: [OnboardingItem] = OnboardingItem.items
     private var imageViews = [UIImageView]()
     var collectionViewWidth: CGFloat {
@@ -125,10 +126,6 @@ class FashionController: UIViewController,UICollectionViewDelegate,UICollectionV
 
 extension FashionController: QuoteCollectionViewDelegate{
     func didTapExploreButton() {
-        let mainAppViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "MainAppController")
-        if let sceneDelegate = view.window?.windowScene?.delegate as? SceneDelegate, let window = sceneDelegate.window {
-            window.rootViewController = mainAppViewController
-            UIView.transition(with: window, duration: 2, options: .transitionCrossDissolve, animations: nil, completion: nil)
-        }
+        navigationManager.show(screen: .mainApp, inController: self)
     }
 }
