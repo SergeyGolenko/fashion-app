@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2C406A2925B05622000EAADE /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C406A2825B05622000EAADE /* NavigationManager.swift */; };
 		2C406A2C25B09C81000EAADE /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C406A2B25B09C81000EAADE /* StorageManager.swift */; };
+		2C406A2F25B09DCA000EAADE /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C406A2E25B09DCA000EAADE /* LoadingViewController.swift */; };
 		2CA7D61425A876A4002BC90A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7D61325A876A4002BC90A /* AppDelegate.swift */; };
 		2CA7D61625A876A4002BC90A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7D61525A876A4002BC90A /* SceneDelegate.swift */; };
 		2CA7D61825A876A4002BC90A /* FashionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7D61725A876A4002BC90A /* FashionController.swift */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		2C406A2825B05622000EAADE /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		2C406A2B25B09C81000EAADE /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		2C406A2E25B09DCA000EAADE /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		2CA7D61025A876A4002BC90A /* fashion-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fashion-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CA7D61325A876A4002BC90A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CA7D61525A876A4002BC90A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				2CA7D61725A876A4002BC90A /* FashionController.swift */,
+				2C406A2E25B09DCA000EAADE /* LoadingViewController.swift */,
 				2CA7D63325A9E09A002BC90A /* MainAppController.swift */,
 			);
 			path = controller;
@@ -189,6 +192,7 @@
 				2C406A2925B05622000EAADE /* NavigationManager.swift in Sources */,
 				2CA7D63425A9E09A002BC90A /* MainAppController.swift in Sources */,
 				2CA7D61425A876A4002BC90A /* AppDelegate.swift in Sources */,
+				2C406A2F25B09DCA000EAADE /* LoadingViewController.swift in Sources */,
 				2CA7D62C25A9D36F002BC90A /* FashionModel.swift in Sources */,
 				2CA7D61625A876A4002BC90A /* SceneDelegate.swift in Sources */,
 				2C406A2C25B09C81000EAADE /* StorageManager.swift in Sources */,
