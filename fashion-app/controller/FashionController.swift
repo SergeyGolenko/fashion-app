@@ -10,7 +10,9 @@ import UIKit
 class FashionController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     
     //MARK: - properties
-    private var  navigationManager = NavigationManager()
+
+    private let storageManager = StorageManager()
+    private let navigationManager = NavigationManager()
     private var items: [OnboardingItem] = OnboardingItem.items
     private var imageViews = [UIImageView]()
     var collectionViewWidth: CGFloat {
@@ -23,6 +25,7 @@ class FashionController: UIViewController,UICollectionViewDelegate,UICollectionV
         setupCollectionView()
         setupPageControl()
         setupImageViews()
+        updateFlag()
     }
     
     //MARK: - DataSource
@@ -77,6 +80,11 @@ class FashionController: UIViewController,UICollectionViewDelegate,UICollectionV
   
     
     //MARK: - functions
+    
+    private func updateFlag() {
+        storageManager.setOnboardingSeen()
+    }
+    
     private func setupImageViews(){
         items.forEach { item in
             let imageView = UIImageView(image: item.image)
